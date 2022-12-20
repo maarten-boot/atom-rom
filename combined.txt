@@ -3060,128 +3060,128 @@ Version 1.0
 22:11:85
 
 
-  Subroutines...
-  **************
-
-D236 Something to do with 'ASN' subroutine
-D303 Get to next non-space character subroutine
-D49A ??? subroutine
-D4C3 ??? subroutine
-D4D0 ??? subroutine
-D587 ??? subroutine
-D594 ??? subroutine
-D636 ??? subroutine
-D642 ??? subroutine
-D64E ??? subroutine
-D67B ??? subroutine
-D686 ??? subroutine
-D6A0 ??? subroutine
-D6C3 Copy the 8 bytes #57..#5E to #5F..66 subroutine
-D6CD Shift Left 1 Bit #5E..#5A subroutine
-D6D8 Shift Right 1 Bit #5A..#5E subroutine
-D6E3 Copy #5A..#5D to #5B..#5E and clear #5A subroutine
-D706 Copy #62..#65 to #63..#66 and clear #62 subroutine
-D71B ??? subroutine
-D778 ??? subroutine
-D7B2 ??? subroutine
-D804 ??? subroutine
-D827 ??? subroutine
-D85D ??? subroutine
-D870 ??? subroutine
-D880 ??? subroutine
-D892 ??? subroutine
-D8BB ??? subroutine
-D8D1 ??? subroutine
-D8E2 ??? subroutine
-D913 ??? subroutine
-D923 ??? subroutine
-DAAE ??? subroutine
-DB9E ??? subroutine
-DBB3 ??? subroutine
-DC27 ??? subroutine
-DD86 ??? subroutine
-DD8A ??? subroutine
-DD93 ??? subroutine
-DE51 ??? subroutine
-DE83 Something to do with 'HTN' subroutine
-
-
-  Other routines...
-  *****************
-
-D000 Extension ROM Existence Check Bytes
-D002 Extension Interpreter Jump Vector
-D004 Extension Interpreter Jump Vector
-D006 Extension Command Table and Jump Addresses
-D0E4 Deal with '('
-D0EB Deal with '+' and '-'
-D0F2 Deal with '*' and '/'
-D0FC Deal with '+' and '-'
-D103 Deal with '^'
-D10E Floating Point interpreter
-D15E Floating Point interpreter
-D177 Deals with '+'
-D183 Deals with '-'
-D18F Deals with '*'
-D19B Deals with '/'
-D1A7 Deals with '^'
-D1BC Deals with '-'
-D1CB Deals with '+'
-D215 Execute the Command 'ABS'
-D21E Execute the Command 'ACS'
-D224 Execute the Command 'ASN'
-D265 Execute the Command 'RAD'
-D273 Execute the Command 'DEG'
-D27C ??? Table
-D286 Execute the Command 'TAN'
-D296 ???
-D29A Execute the Command 'FLT'
-D2C3 Execute the Command 'PI'
-D2CC Execute the Command 'FGET'
-D2E0 Execute the Command 'VAL'
-D30B Execute the Command '%'
-D31F Execute the Command 'STR'
-D331 Execute the Command 'FPRINT'
-D339 ???
-D36A Execute the Command 'FINPUT'
-D3A8 Execute the Command 'FIF'
-D3AE Execute the Command 'FUNTIL'
-D3B4 Execute the Command 'FPUT'
-D3D3 Execute the Command 'FDIM'
-D444 ???
-D494 ???
-D4AF Pass Control to Utility Interpreter, if it Exists
-D933 ???
-D939 ???
-D9EB ???
-D9F6 Execute the conditional test '='
-D9FA Execute the conditional test '<='
-D9FE Execute the conditional test '<>'
-DA02 Execute the conditional test '<'
-DA06 Execute the conditional test '>='
-DA0A Execute the conditional test '>'
-DAC4 Execute the command 'TAN'
-DB6F Execute the command 'SQR'
-DBF9 ??? Table
-DC64 Execute the command 'ATN'
-DCB0 ??? Table
-DCE3 Execute the command 'COS'
-DCEE Execute the command 'SIN'
-DD24 ???
-DD97 ??? Table
-DDD4 Execute the command 'EXP'
-DE23 ??? Table
-DE72 Execute the command 'HTN'
-DED4 ??? Table
-DF02 Execute the command 'COLOUR'
-DF42 Colour Point Plot routine LSB Address Table
-DF46 Colour Point Plot routine MSB Address Table
-DF4A ??? Data Table
-DF4E Colour Byte Table
-DF52 Mode 1 Colour Point Plot routine
-DF70 Mode 2 Colour Point Plot routine
-DF88 Mode 3 Colour Point Plot routine
-DFA0 Mode 4 Colour Point Plot routine
+;   Subroutines...
+;   **************
+;
+; D236 Something to do with 'ASN' subroutine
+; D303 Get to next non-space character subroutine
+; D49A ??? subroutine
+; D4C3 ??? subroutine
+; D4D0 ??? subroutine
+; D587 ??? subroutine
+; D594 ??? subroutine
+; D636 ??? subroutine
+; D642 ??? subroutine
+; D64E ??? subroutine
+; D67B ??? subroutine
+; D686 ??? subroutine
+; D6A0 ??? subroutine
+; D6C3 Copy the 8 bytes #57..#5E to #5F..66 subroutine
+; D6CD Shift Left 1 Bit #5E..#5A subroutine
+; D6D8 Shift Right 1 Bit #5A..#5E subroutine
+; D6E3 Copy #5A..#5D to #5B..#5E and clear #5A subroutine
+; D706 Copy #62..#65 to #63..#66 and clear #62 subroutine
+; D71B ??? subroutine
+; D778 ??? subroutine
+; D7B2 ??? subroutine
+; D804 ??? subroutine
+; D827 ??? subroutine
+; D85D ??? subroutine
+; D870 ??? subroutine
+; D880 ??? subroutine
+; D892 ??? subroutine
+; D8BB ??? subroutine
+; D8D1 ??? subroutine
+; D8E2 ??? subroutine
+; D913 ??? subroutine
+; D923 ??? subroutine
+; DAAE ??? subroutine
+; DB9E ??? subroutine
+; DBB3 ??? subroutine
+; DC27 ??? subroutine
+; DD86 ??? subroutine
+; DD8A ??? subroutine
+; DD93 ??? subroutine
+; DE51 ??? subroutine
+; DE83 Something to do with 'HTN' subroutine
+;
+;
+;   Other routines...
+;   *****************
+;
+; D000 Extension ROM Existence Check Bytes
+; D002 Extension Interpreter Jump Vector
+; D004 Extension Interpreter Jump Vector
+; D006 Extension Command Table and Jump Addresses
+; D0E4 Deal with '('
+; D0EB Deal with '+' and '-'
+; D0F2 Deal with '*' and '/'
+; D0FC Deal with '+' and '-'
+; D103 Deal with '^'
+; D10E Floating Point interpreter
+; D15E Floating Point interpreter
+; D177 Deals with '+'
+; D183 Deals with '-'
+; D18F Deals with '*'
+; D19B Deals with '/'
+; D1A7 Deals with '^'
+; D1BC Deals with '-'
+; D1CB Deals with '+'
+; D215 Execute the Command 'ABS'
+; D21E Execute the Command 'ACS'
+; D224 Execute the Command 'ASN'
+; D265 Execute the Command 'RAD'
+; D273 Execute the Command 'DEG'
+; D27C ??? Table
+; D286 Execute the Command 'TAN'
+; D296 ???
+; D29A Execute the Command 'FLT'
+; D2C3 Execute the Command 'PI'
+; D2CC Execute the Command 'FGET'
+; D2E0 Execute the Command 'VAL'
+; D30B Execute the Command '%'
+; D31F Execute the Command 'STR'
+; D331 Execute the Command 'FPRINT'
+; D339 ???
+; D36A Execute the Command 'FINPUT'
+; D3A8 Execute the Command 'FIF'
+; D3AE Execute the Command 'FUNTIL'
+; D3B4 Execute the Command 'FPUT'
+; D3D3 Execute the Command 'FDIM'
+; D444 ???
+; D494 ???
+; D4AF Pass Control to Utility Interpreter, if it Exists
+; D933 ???
+; D939 ???
+; D9EB ???
+; D9F6 Execute the conditional test '='
+; D9FA Execute the conditional test '<='
+; D9FE Execute the conditional test '<>'
+; DA02 Execute the conditional test '<'
+; DA06 Execute the conditional test '>='
+; DA0A Execute the conditional test '>'
+; DAC4 Execute the command 'TAN'
+; DB6F Execute the command 'SQR'
+; DBF9 ??? Table
+; DC64 Execute the command 'ATN'
+; DCB0 ??? Table
+; DCE3 Execute the command 'COS'
+; DCEE Execute the command 'SIN'
+; DD24 ???
+; DD97 ??? Table
+; DDD4 Execute the command 'EXP'
+; DE23 ??? Table
+; DE72 Execute the command 'HTN'
+; DED4 ??? Table
+; DF02 Execute the command 'COLOUR'
+; DF42 Colour Point Plot routine LSB Address Table
+; DF46 Colour Point Plot routine MSB Address Table
+; DF4A ??? Data Table
+; DF4E Colour Byte Table
+; DF52 Mode 1 Colour Point Plot routine
+; DF70 Mode 2 Colour Point Plot routine
+; DF88 Mode 3 Colour Point Plot routine
+; DFA0 Mode 4 Colour Point Plot routine
 
 
   Extension ROM Existence Check Bytes
@@ -5599,170 +5599,170 @@ Version 1.1
 9:4:86
 
 
-  Subroutines...
-  --------------
-
-F02E Test for Array variable and Fetch Contents if Valid subroutine
-F08B Interpret an Array Variable Address to the Workspace Stack subroutine
-F291 Get to the First Non-Space Character subroutine
-F36B Get the Integer Variable 'P' into the Workspace Stack subroutine
-F376 Print Accumulator in Hexadecimal followed by a Space subroutine
-F37E Print Accumulator in Hexadecimal subroutine
-F668 Decrement the Vector (#5A),X subroutine
-F671 Increment the Vector (#5A),X subroutine
-F678 Plot a Point subroutine
-F720 Point Clear/Set/Invert subroutine
-F73B Mode 1 Point Plot subroutine
-F754 Mode 2 Point Plot subroutine
-F76D Mode 3 Point Plot subroutine
-F7AA Mode 4 Point Plot subroutine
-F7D1 Print ASCII String subroutine
-F7EC Print the (#D4) word in Hexadecimal followed by a Space subroutine
-F7EE Print a 4 Byte Word in Hexadecimal followed by a Space subroutine
-F7F1 Print a 2 Byte Vector in Hexadecimal followed by a Space subroutine
-F7FA Print a Byte in Hexadecimal followed by a Space subroutine
-F7FD Print a Space subroutine
-F802 Print a Byte in Hexadecimal subroutine
-F818 Copy String from #100 Buffer to #140 Buffer subroutine
-F84F Transfer Tape File Control Block and Test Name subroutine
-F875 Get Next Non-Space Character from #100 Buffer subroutine
-F87E Convert ASCII Hexadecimal Digit to Binary subroutine
-F893 Read 4 Hexadecimal Characters from #100 buffer subroutine
-F8EF COS Interpreter subroutine
-F92F Load an Un-Named File subroutine
-F955 Execute the Command '*FLOAD' subroutine
-F958 Execute the Command '*LOAD' subroutine
-F96E OSLOAD Load File subroutine
-F98E Print Filename subroutine
-F9A2 Load Current Block subroutine
-FA08 Increment and Test Vector subroutine
-FA19 Execute the Command '*NOMON' subroutine
-FA1A Execute the Command '*MON' subroutine
-FA65 Read 4 Hex Characters from #100 buffer with Invalid Test subroutine
-FA76 COS Post Test subroutine
-FA86 Save an Un-Named File subroutine
-FAE5 Save File subroutine
-FB3B Send Header and Data Block to Tape subroutine
-FB78 Wait 2 Seconds with Tape Tone Off subroutine
-FB7A Wait 2 Seconds subroutine
-FB81 Wait 0.5 Second subroutine
-FB83 Wait up to 4.25 Seconds subroutine
-FB8A Wait 0.1 second subroutine
-FB8E Read Header from Tape and Test for Un-Named File subroutine
-FBC8 Read Name from Tape and Compare Names subroutine
-FBE2 Get 8 Bytes from Tape into Workspace subroutine
-FBEE OSBGET Get Byte from Tape subroutine
-FC23 Add Byte to Checksum subroutine
-FC2B Set up Block Load Address subroutine
-FC38 Print "PLAY TAPE" or "RECORD TAPE" subroutine
-FC63 Print "REWIND TAPE" subroutine
-FC76 Wait for Keypress and Print <CR><LF> subroutine
-FC7C OSBPUT Put Byte to Tape subroutine
-FCBD Count Duration of Tape Pulse subroutine
-FCCD Test state of #B002 tape input pulse subroutine
-FCD8 Wait for 1 Falling Edge of the 2.4KHz Clock subroutine
-FCDA Wait for 1 to 127 Falling Edges of the 2.4KHz Clock subroutine
-FCEA Send ASCII Character to Screen subroutine
-FD0B Handle <ESC> subroutine
-FD11 Handle <ACK> or <NAK> subroutine
-FD1A Handle <BEL> subroutine
-FD29 Print an ASCII Character on the Screen subroutine
-FD40 Reset Cursor to Start of Current Line Without Deletion subroutine
-FD44 Invert Character at Current Cursor Position subroutine
-FD50 Handle <DEL> subroutine
-FD5C Handle <BS> subroutine
-FD62 Handle <LF> subroutine
-FD69 Handle <FF> subroutine
-FD7D Handle <RS> subroutine
-FD87 Handle <VT> subroutine
-FD8D Handle <SO> subroutine
-FD92 Handle <SI> subroutine
-FD9A Handle <LOCK> subroutine
-FDA2 Handle Cursor Keys from Keyboard subroutine
-FDAE Handle <COPY> Key subroutine
-FDC0 Handle <DEL> key #F (ASCII #7F) subroutine
-FDC2 Handle '[\]^_' keys #3B-#3F (ASCII #5B-#5F) subroutine
-FDC6 Handle 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' keys #21-#3A (ASCII #41-#5A) sub
-FDC8 Handle '@' key #20 (ASCII #40) subroutine
-FDD2 Handle '!"#$' keys 1-4 (ASCII #21-#24) subroutine
-FDD6 Handle '<=>?>' keys #1C-#1F (ASCII #3C-#3F) subroutine
-FDD8 Handle '123456789:;' keys #11-#1B (ASCII #31-#3B) subroutine
-FDDF Handle <SPACE> key 0 (ASCII #10) subroutine
-FDEC Handle <LF>, Scrolling if Necessary subroutine
-FE08 Scroll the Screen subroutine
-FE0A Scroll Y lines of the Screen subroutine
-FE22 Delete Current Line subroutine
-FE2C Add One Line to the Cursor Position subroutine
-FE35 Move the Cursor Back One Position subroutine
-FE52 Send Character to VIA and Screen subroutine
-FE55 Send Character to Screen subroutine
-FE66 Wait Until Next CRT Field Flyback subroutine
-FE6B Wait Until Next or Current CRT Field Flyback subroutine
-FE71 Scan Key Matrix subroutine
-FE94 OSRDCH Get Key subroutine
-FEC4 Decode Control Character subroutine
-FEFB Send Contents of Accumulator to VIA subroutine
-FF38 Do <EXT> subroutine
-
-
-  Other routines...
-    -----------------
-
-F04B Interpreter for #F000 Command Words
-F085 Set Array Variable to an Arbitrarily Complex Expression
-F0AE Execute the Command 'DIM'
-F141 Execute the Command 'RUN'
-F14C Execute the Command 'WAIT'
-F155 Table of Compressed Assembler Mnemonic (MSB)
-F195 Table of Compressed Assembler Mnemonic (LSB)
-F1D5 Table of Bit Masks for Address Modes (LSB)
-F1E4 Table of Bit Masks for Address Modes (MSB)
-F1F3 Table of Offset from Base for Address Modes
-F211 Table of Base Address Value for Mnemonics Modes
-F251 Table of Base Address Value for Mnemonics
-F29C Execute the Command ']'
-F2A1 Execute the Command '['
-F32E Deal with Assembler Label Definition
-F360 Deal with Assembler Comments
-F38E Deal with Assembler Statement
-F3F2 Get Assembler Addressing Mode Data and Type
-F440 Act on Assembler ??? Mode
-F454 Act on Assembler Immediate Mode
-F462 Act on Assembler Indirect Mode
-F49B Construct Assembler Opcode and Data
-F4EC Handle Assembler Relative Addressing
-F531 Execute the Command 'OLD'
-F542 Execute the Command 'DRAW'
-F546 Execute the Command 'MOVE'
-F54E Execute the Command 'PLOT'
-F5B5 Draw a Line Routine
-F5EB Plot a Line with (X change) <= (Y change)
-F61C Plot a Line with (X change) > (Y change)
-F67B Execute the Command 'CLEAR'
-F6C2 Perform 'CLEAR 0'
-F6CF Graphics Mode Control Data
-F6D3 Point Plot Routine LSBs for Graphic Modes 0 to 4
-F6D8 Point Plot Routine MSBs for Graphic Modes 0 to 4
-F6DD VDG Control Byte for Graphic Modes 0 to 4
-F6E2 Mode 0 Point PLot Routine
-F7C9 Graphics Bit Mask Table
-F8BE COS Interpreter Command Table
-F926 Default COS Error Handler
-FA20 Execute the Command '*RUN'
-FA2A Execute the Command '*CAT'
-FA6B Get a Hexadecimal Number and Jump There
-FABB Execute the Command '*SAVE'
-F926 Default COS Error Handler
-FECB WRCHAR Control Code Data Lookup Table
-FED6 RDCHAR Control Code Data Lookup Table
-FEE3 WRCHAR Control Code Address Lookup Table
-FEEE RDCHAR Control Code Address Lookup Table
-FF3F RESET Routine
-FF9A Vector Data Table
-FFB2 IRQ/BRK Handler
-FFC0 Execute BRK
-FFC7 Execute NMI
-FFCB Operating System Jump Table
+;   Subroutines...
+;   --------------
+;
+; F02E Test for Array variable and Fetch Contents if Valid subroutine
+; F08B Interpret an Array Variable Address to the Workspace Stack subroutine
+; F291 Get to the First Non-Space Character subroutine
+; F36B Get the Integer Variable 'P' into the Workspace Stack subroutine
+; F376 Print Accumulator in Hexadecimal followed by a Space subroutine
+; F37E Print Accumulator in Hexadecimal subroutine
+; F668 Decrement the Vector (#5A),X subroutine
+; F671 Increment the Vector (#5A),X subroutine
+; F678 Plot a Point subroutine
+; F720 Point Clear/Set/Invert subroutine
+; F73B Mode 1 Point Plot subroutine
+; F754 Mode 2 Point Plot subroutine
+; F76D Mode 3 Point Plot subroutine
+; F7AA Mode 4 Point Plot subroutine
+; F7D1 Print ASCII String subroutine
+; F7EC Print the (#D4) word in Hexadecimal followed by a Space subroutine
+; F7EE Print a 4 Byte Word in Hexadecimal followed by a Space subroutine
+; F7F1 Print a 2 Byte Vector in Hexadecimal followed by a Space subroutine
+; F7FA Print a Byte in Hexadecimal followed by a Space subroutine
+; F7FD Print a Space subroutine
+; F802 Print a Byte in Hexadecimal subroutine
+; F818 Copy String from #100 Buffer to #140 Buffer subroutine
+; F84F Transfer Tape File Control Block and Test Name subroutine
+; F875 Get Next Non-Space Character from #100 Buffer subroutine
+; F87E Convert ASCII Hexadecimal Digit to Binary subroutine
+; F893 Read 4 Hexadecimal Characters from #100 buffer subroutine
+; F8EF COS Interpreter subroutine
+; F92F Load an Un-Named File subroutine
+; F955 Execute the Command '*FLOAD' subroutine
+; F958 Execute the Command '*LOAD' subroutine
+; F96E OSLOAD Load File subroutine
+; F98E Print Filename subroutine
+; F9A2 Load Current Block subroutine
+; FA08 Increment and Test Vector subroutine
+; FA19 Execute the Command '*NOMON' subroutine
+; FA1A Execute the Command '*MON' subroutine
+; FA65 Read 4 Hex Characters from #100 buffer with Invalid Test subroutine
+; FA76 COS Post Test subroutine
+; FA86 Save an Un-Named File subroutine
+; FAE5 Save File subroutine
+; FB3B Send Header and Data Block to Tape subroutine
+; FB78 Wait 2 Seconds with Tape Tone Off subroutine
+; FB7A Wait 2 Seconds subroutine
+; FB81 Wait 0.5 Second subroutine
+; FB83 Wait up to 4.25 Seconds subroutine
+; FB8A Wait 0.1 second subroutine
+; FB8E Read Header from Tape and Test for Un-Named File subroutine
+; FBC8 Read Name from Tape and Compare Names subroutine
+; FBE2 Get 8 Bytes from Tape into Workspace subroutine
+; FBEE OSBGET Get Byte from Tape subroutine
+; FC23 Add Byte to Checksum subroutine
+; FC2B Set up Block Load Address subroutine
+; FC38 Print "PLAY TAPE" or "RECORD TAPE" subroutine
+; FC63 Print "REWIND TAPE" subroutine
+; FC76 Wait for Keypress and Print <CR><LF> subroutine
+; FC7C OSBPUT Put Byte to Tape subroutine
+; FCBD Count Duration of Tape Pulse subroutine
+; FCCD Test state of #B002 tape input pulse subroutine
+; FCD8 Wait for 1 Falling Edge of the 2.4KHz Clock subroutine
+; FCDA Wait for 1 to 127 Falling Edges of the 2.4KHz Clock subroutine
+; FCEA Send ASCII Character to Screen subroutine
+; FD0B Handle <ESC> subroutine
+; FD11 Handle <ACK> or <NAK> subroutine
+; FD1A Handle <BEL> subroutine
+; FD29 Print an ASCII Character on the Screen subroutine
+; FD40 Reset Cursor to Start of Current Line Without Deletion subroutine
+; FD44 Invert Character at Current Cursor Position subroutine
+; FD50 Handle <DEL> subroutine
+; FD5C Handle <BS> subroutine
+; FD62 Handle <LF> subroutine
+; FD69 Handle <FF> subroutine
+; FD7D Handle <RS> subroutine
+; FD87 Handle <VT> subroutine
+; FD8D Handle <SO> subroutine
+; FD92 Handle <SI> subroutine
+; FD9A Handle <LOCK> subroutine
+; FDA2 Handle Cursor Keys from Keyboard subroutine
+; FDAE Handle <COPY> Key subroutine
+; FDC0 Handle <DEL> key #F (ASCII #7F) subroutine
+; FDC2 Handle '[\]^_' keys #3B-#3F (ASCII #5B-#5F) subroutine
+; FDC6 Handle 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' keys #21-#3A (ASCII #41-#5A) sub
+; FDC8 Handle '@' key #20 (ASCII #40) subroutine
+; FDD2 Handle '!"#$' keys 1-4 (ASCII #21-#24) subroutine
+; FDD6 Handle '<=>?>' keys #1C-#1F (ASCII #3C-#3F) subroutine
+; FDD8 Handle '123456789:;' keys #11-#1B (ASCII #31-#3B) subroutine
+; FDDF Handle <SPACE> key 0 (ASCII #10) subroutine
+; FDEC Handle <LF>, Scrolling if Necessary subroutine
+; FE08 Scroll the Screen subroutine
+; FE0A Scroll Y lines of the Screen subroutine
+; FE22 Delete Current Line subroutine
+; FE2C Add One Line to the Cursor Position subroutine
+; FE35 Move the Cursor Back One Position subroutine
+; FE52 Send Character to VIA and Screen subroutine
+; FE55 Send Character to Screen subroutine
+; FE66 Wait Until Next CRT Field Flyback subroutine
+; FE6B Wait Until Next or Current CRT Field Flyback subroutine
+; FE71 Scan Key Matrix subroutine
+; FE94 OSRDCH Get Key subroutine
+; FEC4 Decode Control Character subroutine
+; FEFB Send Contents of Accumulator to VIA subroutine
+; FF38 Do <EXT> subroutine
+;
+;
+;   Other routines...
+;     -----------------
+;
+; F04B Interpreter for #F000 Command Words
+; F085 Set Array Variable to an Arbitrarily Complex Expression
+; F0AE Execute the Command 'DIM'
+; F141 Execute the Command 'RUN'
+; F14C Execute the Command 'WAIT'
+; F155 Table of Compressed Assembler Mnemonic (MSB)
+; F195 Table of Compressed Assembler Mnemonic (LSB)
+; F1D5 Table of Bit Masks for Address Modes (LSB)
+; F1E4 Table of Bit Masks for Address Modes (MSB)
+; F1F3 Table of Offset from Base for Address Modes
+; F211 Table of Base Address Value for Mnemonics Modes
+; F251 Table of Base Address Value for Mnemonics
+; F29C Execute the Command ']'
+; F2A1 Execute the Command '['
+; F32E Deal with Assembler Label Definition
+; F360 Deal with Assembler Comments
+; F38E Deal with Assembler Statement
+; F3F2 Get Assembler Addressing Mode Data and Type
+; F440 Act on Assembler ??? Mode
+; F454 Act on Assembler Immediate Mode
+; F462 Act on Assembler Indirect Mode
+; F49B Construct Assembler Opcode and Data
+; F4EC Handle Assembler Relative Addressing
+; F531 Execute the Command 'OLD'
+; F542 Execute the Command 'DRAW'
+; F546 Execute the Command 'MOVE'
+; F54E Execute the Command 'PLOT'
+; F5B5 Draw a Line Routine
+; F5EB Plot a Line with (X change) <= (Y change)
+; F61C Plot a Line with (X change) > (Y change)
+; F67B Execute the Command 'CLEAR'
+; F6C2 Perform 'CLEAR 0'
+; F6CF Graphics Mode Control Data
+; F6D3 Point Plot Routine LSBs for Graphic Modes 0 to 4
+; F6D8 Point Plot Routine MSBs for Graphic Modes 0 to 4
+; F6DD VDG Control Byte for Graphic Modes 0 to 4
+; F6E2 Mode 0 Point PLot Routine
+; F7C9 Graphics Bit Mask Table
+; F8BE COS Interpreter Command Table
+; F926 Default COS Error Handler
+; FA20 Execute the Command '*RUN'
+; FA2A Execute the Command '*CAT'
+; FA6B Get a Hexadecimal Number and Jump There
+; FABB Execute the Command '*SAVE'
+; F926 Default COS Error Handler
+; FECB WRCHAR Control Code Data Lookup Table
+; FED6 RDCHAR Control Code Data Lookup Table
+; FEE3 WRCHAR Control Code Address Lookup Table
+; FEEE RDCHAR Control Code Address Lookup Table
+; FF3F RESET Routine
+; FF9A Vector Data Table
+; FFB2 IRQ/BRK Handler
+; FFC0 Execute BRK
+; FFC7 Execute NMI
+; FFCB Operating System Jump Table
 
 
 F000  50 4C 4F 54 F5 4E 44 52 41 57 F5 42 4D 4F 56 45  PLOT..DRAW..MOVE

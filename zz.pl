@@ -14,16 +14,24 @@ my %ADDR;
     my $p1 = '^([[:xdigit:]]{4})\s{2} ((?:[[:xdigit:]]{2}\s){1,3}\s{1,7}) (\w{3}(?:\s\S+)?) (.*)';
 
     my $nr = 0;
-    my $hex_curr = 0;
-
+    my $curr = 0; # the current address as converted from hex
+    my $next = 0; # the next address as converted from hex base + the number of bytes
+# ÿ
     while(<IN>) {
         if ( m/$p1/x) {
             my $base = trim($1);
             my $hex_val = hex($base);
+            $curr = $hex_val;
+            if ($next) { # if we have next defined, we should now actually be at next, if not complain as we have missing data in the file
+                if( $next != $curr) {
+                    print ";;ERR missing data curr: $curr should be next: $next\n";
+                }
+            }
 
             my $code = trim($2);
             my @b = split(/\s+/, $code);
             my $nbytes = @b;
+            $next = $curr + $nbytes;
 
             while(length($code) < 10 ) {
                 $code = "$code "
@@ -48,10 +56,17 @@ my %ADDR;
         if ( m/^([[:xdigit:]]{4})((?:\s+[[:xdigit:]]{2})*)(.*)/x) {
             my $base = trim($1);
             my $hex_val = hex($base);
+            $curr = $hex_val;
+            if ($next) { # if we have next defined, we should now actually be at next, if not complain as we have missing data in the file
+                if( $next != $curr) {
+                    print ";;ERR missing data curr: $curr should be next: $next\n";
+                }
+            }
 
             my $bytes = trim($2);
             my @b = split(/\s+/, $bytes);
             my $nbytes = @b;
+            $next = $curr + $nbytes;
 
             while(length($bytes) < 68 ) {
                 $bytes = "$bytes "
