@@ -1,3 +1,9 @@
+; common locations
+
+DEFINE #2901 lower_text_space
+DEFINE #8001 upper_text_space
+DEFINE #B000 vdg_contril_mode
+
 ; define common subroutines
 ; basic rom is cxxx
 
@@ -70,6 +76,34 @@ DEFINE #CF5B sr_CF5B
 DEFINE #CF7B sr_CF7B
 
 ; Floating point rom is dxxx
+
+DEFINE #DAC4 TAN_fp_sr
+DEFINE #DB6F SQR_fp_sr
+DEFINE #DC64 ATN_fp_sr
+DEFINE #DCE3 COS_fp_sr
+DEFINE #DCEE SIN_fp_sr
+
+; D215 Execute the Command 'ABS'
+; D21E Execute the Command 'ACS'
+; D224 Execute the Command 'ASN'
+; D265 Execute the Command 'RAD'
+; D273 Execute the Command 'DEG'
+; D27C ??? Table
+; D286 Execute the Command 'TAN' ; there are 2 TAN sr's
+; D296 ???
+; D29A Execute the Command 'FLT'
+; D2C3 Execute the Command 'PI'
+; D2CC Execute the Command 'FGET'
+; D2E0 Execute the Command 'VAL'
+; D30B Execute the Command '%'
+; D31F Execute the Command 'STR'
+; D331 Execute the Command 'FPRINT'
+; D339 ???
+; D36A Execute the Command 'FINPUT'
+; D3A8 Execute the Command 'FIF'
+; D3AE Execute the Command 'FUNTIL'
+; D3B4 Execute the Command 'FPUT'
+; D3D3 Execute the Command 'FDIM'
 ;   Subroutines...
 ;   **************
 ;
@@ -286,9 +320,10 @@ DEFINE #DE1C sr_DE1C
 DEFINE #DE51 sr_DE51
 DEFINE #DE83 sr_DE83
 DEFINE #DE8D sr_DE8D
-
+;
 ; no rom currently at exxx (this is the disk rom)
-
+;
+; ==========================================
 ; os rom is fxxx
 ;   Subroutines...
 ;   --------------

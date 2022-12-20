@@ -9,6 +9,7 @@ sub  trim { my $s = shift; $s =~ s/^\s+|\s+$//g; return $s };
 my @LINES; # store all lines by actual line nr
 my %ADDR; # store the code offset and link to the line nr
 my %DEFS; # store the defines
+my %ADDRS; # common used addresses
 
 sub validate_curr_next($$) {
     my $curr = shift;
@@ -36,13 +37,28 @@ sub analAsm($) {
     my $x = 0;
     my $y = 0;
 
-    my @q = split(/\,/,$ins[1]);
+    if ( $inst =~ m/\(/) {
+        $ind = 1;
+    }
+    if ( $inst =~ m/@/) {
+        $imm = 1;
+    }
+
+    my $a = "";
+    if ($inst =~ m/(#[[:xdigit:]]+)/ ) {
+        $a = $1;
+        if( $imm == 0 ) {
+            $ADDRS{$a} = $a;
+        }
+    }
+
+    my @q = split(/,/,$ins[1]);
     if( $#q > 0 ) {
         if( $q[1] eq "Y") { $y = 1; }
         if( $q[1] eq "X") { $x = 1; }
     }
 
-    print  STDERR $ins[0]," ", $ins[1], "\n";
+    print  STDERR $ins[0]," ", $ins[1], " // imm: $imm, ind: $ind, x: $x, y: $y, a: $a\n";
 
     return $inst;
 }
@@ -139,10 +155,33 @@ sub analAsm($) {
 
         my $p = ' ' x 85;
         my $z = "$p; $line";
+
         $LINES[$nr] = $z;
         print "$z\n";
+
         $nr ++;
         next;
+    }
+
+    foreach my $a (sort keys %ADDRS) {
+        if( length($a) == 5 ) {
+            print ";common referenced address; $a\n";
+        }
+    }
+    foreach my $a (sort keys %ADDRS) {
+        if( length($a) == 4 ) {
+            print ";common referenced address; $a\n";
+        }
+    }
+    foreach my $a (sort keys %ADDRS) {
+        if( length($a) == 3 ) {
+            print ";common referenced address; $a\n";
+        }
+    }
+    foreach my $a (sort keys %ADDRS) {
+        if( length($a) == 2 ) {
+            print ";common referenced address; $a\n";
+        }
     }
 
     close(IN);
