@@ -1,3 +1,530 @@
+                                                                                     ; define common subroutines
+                                                                                     ; basic rom is cxxx
+                                                                                     ; 
+                                                                                     ; DEFINE #C22C sr_C22C
+                                                                                     ; DEFINE #C231 sr_C231
+                                                                                     ; DEFINE #C279 sr_C279
+                                                                                     ; DEFINE #C2A5 sr_C2A5
+                                                                                     ; DEFINE #C372 sr_C372
+                                                                                     ; DEFINE #C3C8 sr_C3C8
+                                                                                     ; DEFINE #C3CB sr_C3CB
+                                                                                     ; DEFINE #C3CD sr_C3CD
+                                                                                     ; DEFINE #C424 sr_C424
+                                                                                     ; DEFINE #C434 sr_C434
+                                                                                     ; DEFINE #C465 sr_C465
+                                                                                     ; DEFINE #C46A sr_C46A
+                                                                                     ; DEFINE #C4D9 sr_C4D9
+                                                                                     ; DEFINE #C4DE sr_C4DE
+                                                                                     ; DEFINE #C4E1 sr_C4E1
+                                                                                     ; DEFINE #C4E4 sr_C4E4
+                                                                                     ; DEFINE #C4F6 sr_C4F6
+                                                                                     ; DEFINE #C500 sr_C500
+                                                                                     ; DEFINE #C50C sr_C50C
+                                                                                     ; DEFINE #C51C sr_C51C
+                                                                                     ; DEFINE #C51D sr_C51D
+                                                                                     ; DEFINE #C589 sr_C589
+                                                                                     ; DEFINE #C5C8 sr_C5C8
+                                                                                     ; DEFINE #C5F9 sr_C5F9
+                                                                                     ; DEFINE #C62E sr_C62E
+                                                                                     ; DEFINE #C661 sr_C661
+                                                                                     ; DEFINE #C689 sr_C689
+                                                                                     ; DEFINE #C6DA sr_C6DA
+                                                                                     ; DEFINE #C705 sr_C705
+                                                                                     ; DEFINE #C70C sr_C70C
+                                                                                     ; DEFINE #C72C sr_C72C
+                                                                                     ; DEFINE #C78B sr_C78B
+                                                                                     ; DEFINE #C80B sr_C80B
+                                                                                     ; DEFINE #C8A2 sr_C8A2
+                                                                                     ; DEFINE #C8BC sr_C8BC
+                                                                                     ; DEFINE #C8C4 sr_C8C4
+                                                                                     ; DEFINE #C8DC sr_C8DC
+                                                                                     ; DEFINE #C8E1 sr_C8E1
+                                                                                     ; DEFINE #C905 sr_C905
+                                                                                     ; DEFINE #C907 sr_C907
+                                                                                     ; DEFINE #C94C sr_C94C
+                                                                                     ; DEFINE #C94F sr_C94F
+                                                                                     ; DEFINE #C962 sr_C962
+                                                                                     ; DEFINE #C97C sr_C97C
+                                                                                     ; DEFINE #C99F sr_C99F
+                                                                                     ; DEFINE #C9A1 sr_C9A1
+                                                                                     ; DEFINE #C9B3 sr_C9B3
+                                                                                     ; DEFINE #CA2C sr_CA2C
+                                                                                     ; DEFINE #CA2F sr_CA2F
+                                                                                     ; DEFINE #CA4C sr_CA4C
+                                                                                     ; DEFINE #CC1F sr_CC1F
+                                                                                     ; DEFINE #CD09 sr_CD09
+                                                                                     ; DEFINE #CD0F sr_CD0F
+                                                                                     ; DEFINE #CD54 sr_CD54
+                                                                                     ; DEFINE #CD81 sr_CD81
+                                                                                     ; DEFINE #CDBC sr_CDBC
+                                                                                     ; DEFINE #CDBD sr_CDBD
+                                                                                     ; DEFINE #CE93 sr_CE93
+                                                                                     ; DEFINE #CEA1 sr_CEA1
+                                                                                     ; DEFINE #CEA2 sr_CEA2
+                                                                                     ; DEFINE #CEAE sr_CEAE
+                                                                                     ; DEFINE #CEB1 sr_CEB1
+                                                                                     ; DEFINE #CEFA sr_CEFA
+                                                                                     ; DEFINE #CF3E sr_CF3E
+                                                                                     ; DEFINE #CF41 sr_CF41
+                                                                                     ; DEFINE #CF5B sr_CF5B
+                                                                                     ; DEFINE #CF7B sr_CF7B
+                                                                                     ; 
+                                                                                     ; Floating point rom is dxxx
+                                                                                     ; Subroutines...
+                                                                                     ; **************
+                                                                                     ; 
+                                                                                     ; D236 Something to do with 'ASN' subroutine
+                                                                                     ; D303 Get to next non-space character subroutine
+                                                                                     ; D49A ??? subroutine
+                                                                                     ; D4C3 ??? subroutine
+                                                                                     ; D4D0 ??? subroutine
+                                                                                     ; D587 ??? subroutine
+                                                                                     ; D594 ??? subroutine
+                                                                                     ; D636 ??? subroutine
+                                                                                     ; D642 ??? subroutine
+                                                                                     ; D64E ??? subroutine
+                                                                                     ; D67B ??? subroutine
+                                                                                     ; D686 ??? subroutine
+                                                                                     ; D6A0 ??? subroutine
+                                                                                     ; D6C3 Copy the 8 bytes #57..#5E to #5F..66 subroutine
+                                                                                     ; D6CD Shift Left 1 Bit #5E..#5A subroutine
+                                                                                     ; D6D8 Shift Right 1 Bit #5A..#5E subroutine
+                                                                                     ; D6E3 Copy #5A..#5D to #5B..#5E and clear #5A subroutine
+                                                                                     ; D706 Copy #62..#65 to #63..#66 and clear #62 subroutine
+                                                                                     ; D71B ??? subroutine
+                                                                                     ; D778 ??? subroutine
+                                                                                     ; D7B2 ??? subroutine
+                                                                                     ; D804 ??? subroutine
+                                                                                     ; D827 ??? subroutine
+                                                                                     ; D85D ??? subroutine
+                                                                                     ; D870 ??? subroutine
+                                                                                     ; D880 ??? subroutine
+                                                                                     ; D892 ??? subroutine
+                                                                                     ; D8BB ??? subroutine
+                                                                                     ; D8D1 ??? subroutine
+                                                                                     ; D8E2 ??? subroutine
+                                                                                     ; D913 ??? subroutine
+                                                                                     ; D923 ??? subroutine
+                                                                                     ; DAAE ??? subroutine
+                                                                                     ; DB9E ??? subroutine
+                                                                                     ; DBB3 ??? subroutine
+                                                                                     ; DC27 ??? subroutine
+                                                                                     ; DD86 ??? subroutine
+                                                                                     ; DD8A ??? subroutine
+                                                                                     ; DD93 ??? subroutine
+                                                                                     ; DE51 ??? subroutine
+                                                                                     ; DE83 Something to do with 'HTN' subroutine
+                                                                                     ; 
+                                                                                     ; 
+                                                                                     ; Other routines...
+                                                                                     ; *****************
+                                                                                     ; 
+                                                                                     ; D000 Extension ROM Existence Check Bytes
+                                                                                     ; D002 Extension Interpreter Jump Vector
+                                                                                     ; D004 Extension Interpreter Jump Vector
+                                                                                     ; D006 Extension Command Table and Jump Addresses
+                                                                                     ; D0E4 Deal with '('
+                                                                                     ; D0EB Deal with '+' and '-'
+                                                                                     ; D0F2 Deal with '*' and '/'
+                                                                                     ; D0FC Deal with '+' and '-'
+                                                                                     ; D103 Deal with '^'
+                                                                                     ; D10E Floating Point interpreter
+                                                                                     ; D15E Floating Point interpreter
+                                                                                     ; D177 Deals with '+'
+                                                                                     ; D183 Deals with '-'
+                                                                                     ; D18F Deals with '*'
+                                                                                     ; D19B Deals with '/'
+                                                                                     ; D1A7 Deals with '^'
+                                                                                     ; D1BC Deals with '-'
+                                                                                     ; D1CB Deals with '+'
+                                                                                     ; D215 Execute the Command 'ABS'
+                                                                                     ; D21E Execute the Command 'ACS'
+                                                                                     ; D224 Execute the Command 'ASN'
+                                                                                     ; D265 Execute the Command 'RAD'
+                                                                                     ; D273 Execute the Command 'DEG'
+                                                                                     ; D27C ??? Table
+                                                                                     ; D286 Execute the Command 'TAN'
+                                                                                     ; D296 ???
+                                                                                     ; D29A Execute the Command 'FLT'
+                                                                                     ; D2C3 Execute the Command 'PI'
+                                                                                     ; D2CC Execute the Command 'FGET'
+                                                                                     ; D2E0 Execute the Command 'VAL'
+                                                                                     ; D30B Execute the Command '%'
+                                                                                     ; D31F Execute the Command 'STR'
+                                                                                     ; D331 Execute the Command 'FPRINT'
+                                                                                     ; D339 ???
+                                                                                     ; D36A Execute the Command 'FINPUT'
+                                                                                     ; D3A8 Execute the Command 'FIF'
+                                                                                     ; D3AE Execute the Command 'FUNTIL'
+                                                                                     ; D3B4 Execute the Command 'FPUT'
+                                                                                     ; D3D3 Execute the Command 'FDIM'
+                                                                                     ; D444 ???
+                                                                                     ; D494 ???
+                                                                                     ; D4AF Pass Control to Utility Interpreter, if it Exists
+                                                                                     ; D933 ???
+                                                                                     ; D939 ???
+                                                                                     ; D9EB ???
+                                                                                     ; D9F6 Execute the conditional test '='
+                                                                                     ; D9FA Execute the conditional test '<='
+                                                                                     ; D9FE Execute the conditional test '<>'
+                                                                                     ; DA02 Execute the conditional test '<'
+                                                                                     ; DA06 Execute the conditional test '>='
+                                                                                     ; DA0A Execute the conditional test '>'
+                                                                                     ; DAC4 Execute the command 'TAN'
+                                                                                     ; DB6F Execute the command 'SQR'
+                                                                                     ; DBF9 ??? Table
+                                                                                     ; DC64 Execute the command 'ATN'
+                                                                                     ; DCB0 ??? Table
+                                                                                     ; DCE3 Execute the command 'COS'
+                                                                                     ; DCEE Execute the command 'SIN'
+                                                                                     ; DD24 ???
+                                                                                     ; DD97 ??? Table
+                                                                                     ; DDD4 Execute the command 'EXP'
+                                                                                     ; DE23 ??? Table
+                                                                                     ; DE72 Execute the command 'HTN'
+                                                                                     ; DED4 ??? Table
+                                                                                     ; DF02 Execute the command 'COLOUR'
+                                                                                     ; DF42 Colour Point Plot routine LSB Address Table
+                                                                                     ; DF46 Colour Point Plot routine MSB Address Table
+                                                                                     ; DF4A ??? Data Table
+                                                                                     ; DF4E Colour Byte Table
+                                                                                     ; DF52 Mode 1 Colour Point Plot routine
+                                                                                     ; DF70 Mode 2 Colour Point Plot routine
+                                                                                     ; DF88 Mode 3 Colour Point Plot routine
+                                                                                     ; DFA0 Mode 4 Colour Point Plot routine
+                                                                                     ; 
+                                                                                     ; DEFINE #D0EB sr_D0EB
+                                                                                     ; DEFINE #D0EC sr_D0EC
+                                                                                     ; DEFINE #D0F2 sr_D0F2
+                                                                                     ; DEFINE #D0F5 sr_D0F5
+                                                                                     ; DEFINE #D0FC sr_D0FC
+                                                                                     ; DEFINE #D103 sr_D103
+                                                                                     ; DEFINE #D106 sr_D106
+                                                                                     ; DEFINE #D1BF sr_D1BF
+                                                                                     ; DEFINE #D1CB sr_D1CB
+                                                                                     ; DEFINE #D1E5 sr_D1E5
+                                                                                     ; DEFINE #D224 sr_D224
+                                                                                     ; DEFINE #D236 sr_D236
+                                                                                     ; DEFINE #D2AC sr_D2AC
+                                                                                     ; DEFINE #D2DA sr_D2DA
+                                                                                     ; DEFINE #D303 sr_D303
+                                                                                     ; DEFINE #D304 sr_D304
+                                                                                     ; DEFINE #D444 sr_D444
+                                                                                     ; DEFINE #D494 sr_D494
+                                                                                     ; DEFINE #D49A sr_D49A
+                                                                                     ; DEFINE #D4C3 sr_D4C3
+                                                                                     ; DEFINE #D4D0 sr_D4D0
+                                                                                     ; DEFINE #D575 sr_D575
+                                                                                     ; DEFINE #D587 sr_D587
+                                                                                     ; DEFINE #D58B sr_D58B
+                                                                                     ; DEFINE #D58D sr_D58D
+                                                                                     ; DEFINE #D5A5 sr_D5A5
+                                                                                     ; DEFINE #D5B1 sr_D5B1
+                                                                                     ; DEFINE #D636 sr_D636
+                                                                                     ; DEFINE #D642 sr_D642
+                                                                                     ; DEFINE #D64E sr_D64E
+                                                                                     ; DEFINE #D67B sr_D67B
+                                                                                     ; DEFINE #D686 sr_D686
+                                                                                     ; DEFINE #D6A0 sr_D6A0
+                                                                                     ; DEFINE #D6B4 sr_D6B4
+                                                                                     ; DEFINE #D6C3 sr_D6C3
+                                                                                     ; DEFINE #D6CD sr_D6CD
+                                                                                     ; DEFINE #D6D8 sr_D6D8
+                                                                                     ; DEFINE #D6F8 sr_D6F8
+                                                                                     ; DEFINE #D6FB sr_D6FB
+                                                                                     ; DEFINE #D71B sr_D71B
+                                                                                     ; DEFINE #D772 sr_D772
+                                                                                     ; DEFINE #D778 sr_D778
+                                                                                     ; DEFINE #D7B2 sr_D7B2
+                                                                                     ; DEFINE #D7C8 sr_D7C8
+                                                                                     ; DEFINE #D804 sr_D804
+                                                                                     ; DEFINE #D827 sr_D827
+                                                                                     ; DEFINE #D82C sr_D82C
+                                                                                     ; DEFINE #D831 sr_D831
+                                                                                     ; DEFINE #D836 sr_D836
+                                                                                     ; DEFINE #D83D sr_D83D
+                                                                                     ; DEFINE #D85D sr_D85D
+                                                                                     ; DEFINE #D870 sr_D870
+                                                                                     ; DEFINE #D880 sr_D880
+                                                                                     ; DEFINE #D89A sr_D89A
+                                                                                     ; DEFINE #D8C7 sr_D8C7
+                                                                                     ; DEFINE #D8D5 sr_D8D5
+                                                                                     ; DEFINE #D8E2 sr_D8E2
+                                                                                     ; DEFINE #D8F9 sr_D8F9
+                                                                                     ; DEFINE #D913 sr_D913
+                                                                                     ; DEFINE #D923 sr_D923
+                                                                                     ; DEFINE #D933 sr_D933
+                                                                                     ; DEFINE #D939 sr_D939
+                                                                                     ; DEFINE #D93C sr_D93C
+                                                                                     ; DEFINE #D941 sr_D941
+                                                                                     ; DEFINE #D9EB sr_D9EB
+                                                                                     ; DEFINE #DA45 sr_DA45
+                                                                                     ; DEFINE #DA9B sr_DA9B
+                                                                                     ; DEFINE #DAA4 sr_DAA4
+                                                                                     ; DEFINE #DAAE sr_DAAE
+                                                                                     ; DEFINE #DAB6 sr_DAB6
+                                                                                     ; DEFINE #DADC sr_DADC
+                                                                                     ; DEFINE #DB72 sr_DB72
+                                                                                     ; DEFINE #DB9E sr_DB9E
+                                                                                     ; DEFINE #DBA2 sr_DBA2
+                                                                                     ; DEFINE #DBA6 sr_DBA6
+                                                                                     ; DEFINE #DBAA sr_DBAA
+                                                                                     ; DEFINE #DBB6 sr_DBB6
+                                                                                     ; DEFINE #DC27 sr_DC27
+                                                                                     ; DEFINE #DC7A sr_DC7A
+                                                                                     ; DEFINE #DC86 sr_DC86
+                                                                                     ; DEFINE #DC8C sr_DC8C
+                                                                                     ; DEFINE #DCE6 sr_DCE6
+                                                                                     ; DEFINE #DCF1 sr_DCF1
+                                                                                     ; DEFINE #DD05 sr_DD05
+                                                                                     ; DEFINE #DD24 sr_DD24
+                                                                                     ; DEFINE #DD86 sr_DD86
+                                                                                     ; DEFINE #DD8A sr_DD8A
+                                                                                     ; DEFINE #DD93 sr_DD93
+                                                                                     ; DEFINE #DDD7 sr_DDD7
+                                                                                     ; DEFINE #DE1C sr_DE1C
+                                                                                     ; DEFINE #DE51 sr_DE51
+                                                                                     ; DEFINE #DE83 sr_DE83
+                                                                                     ; DEFINE #DE8D sr_DE8D
+                                                                                     ; 
+                                                                                     ; no rom currently at exxx (this is the disk rom)
+                                                                                     ; 
+                                                                                     ; os rom is fxxx
+                                                                                     ; Subroutines...
+                                                                                     ; --------------
+                                                                                     ; 
+                                                                                     ; F02E Test for Array variable and Fetch Contents if Valid subroutine
+                                                                                     ; F08B Interpret an Array Variable Address to the Workspace Stack subroutine
+                                                                                     ; F291 Get to the First Non-Space Character subroutine
+                                                                                     ; F36B Get the Integer Variable 'P' into the Workspace Stack subroutine
+                                                                                     ; F376 Print Accumulator in Hexadecimal followed by a Space subroutine
+                                                                                     ; F37E Print Accumulator in Hexadecimal subroutine
+                                                                                     ; F668 Decrement the Vector (#5A),X subroutine
+                                                                                     ; F671 Increment the Vector (#5A),X subroutine
+                                                                                     ; F678 Plot a Point subroutine
+                                                                                     ; F720 Point Clear/Set/Invert subroutine
+                                                                                     ; F73B Mode 1 Point Plot subroutine
+                                                                                     ; F754 Mode 2 Point Plot subroutine
+                                                                                     ; F76D Mode 3 Point Plot subroutine
+                                                                                     ; F7AA Mode 4 Point Plot subroutine
+                                                                                     ; F7D1 Print ASCII String subroutine
+                                                                                     ; F7EC Print the (#D4) word in Hexadecimal followed by a Space subroutine
+                                                                                     ; F7EE Print a 4 Byte Word in Hexadecimal followed by a Space subroutine
+                                                                                     ; F7F1 Print a 2 Byte Vector in Hexadecimal followed by a Space subroutine
+                                                                                     ; F7FA Print a Byte in Hexadecimal followed by a Space subroutine
+                                                                                     ; F7FD Print a Space subroutine
+                                                                                     ; F802 Print a Byte in Hexadecimal subroutine
+                                                                                     ; F818 Copy String from #100 Buffer to #140 Buffer subroutine
+                                                                                     ; F84F Transfer Tape File Control Block and Test Name subroutine
+                                                                                     ; F875 Get Next Non-Space Character from #100 Buffer subroutine
+                                                                                     ; F87E Convert ASCII Hexadecimal Digit to Binary subroutine
+                                                                                     ; F893 Read 4 Hexadecimal Characters from #100 buffer subroutine
+                                                                                     ; F8EF COS Interpreter subroutine
+                                                                                     ; F92F Load an Un-Named File subroutine
+                                                                                     ; F955 Execute the Command '*FLOAD' subroutine
+                                                                                     ; F958 Execute the Command '*LOAD' subroutine
+                                                                                     ; F96E OSLOAD Load File subroutine
+                                                                                     ; F98E Print Filename subroutine
+                                                                                     ; F9A2 Load Current Block subroutine
+                                                                                     ; FA08 Increment and Test Vector subroutine
+                                                                                     ; FA19 Execute the Command '*NOMON' subroutine
+                                                                                     ; FA1A Execute the Command '*MON' subroutine
+                                                                                     ; FA65 Read 4 Hex Characters from #100 buffer with Invalid Test subroutine
+                                                                                     ; FA76 COS Post Test subroutine
+                                                                                     ; FA86 Save an Un-Named File subroutine
+                                                                                     ; FAE5 Save File subroutine
+                                                                                     ; FB3B Send Header and Data Block to Tape subroutine
+                                                                                     ; FB78 Wait 2 Seconds with Tape Tone Off subroutine
+                                                                                     ; FB7A Wait 2 Seconds subroutine
+                                                                                     ; FB81 Wait 0.5 Second subroutine
+                                                                                     ; FB83 Wait up to 4.25 Seconds subroutine
+                                                                                     ; FB8A Wait 0.1 second subroutine
+                                                                                     ; FB8E Read Header from Tape and Test for Un-Named File subroutine
+                                                                                     ; FBC8 Read Name from Tape and Compare Names subroutine
+                                                                                     ; FBE2 Get 8 Bytes from Tape into Workspace subroutine
+                                                                                     ; FBEE OSBGET Get Byte from Tape subroutine
+                                                                                     ; FC23 Add Byte to Checksum subroutine
+                                                                                     ; FC2B Set up Block Load Address subroutine
+                                                                                     ; FC38 Print "PLAY TAPE" or "RECORD TAPE" subroutine
+                                                                                     ; FC63 Print "REWIND TAPE" subroutine
+                                                                                     ; FC76 Wait for Keypress and Print <CR><LF> subroutine
+                                                                                     ; FC7C OSBPUT Put Byte to Tape subroutine
+                                                                                     ; FCBD Count Duration of Tape Pulse subroutine
+                                                                                     ; FCCD Test state of #B002 tape input pulse subroutine
+                                                                                     ; FCD8 Wait for 1 Falling Edge of the 2.4KHz Clock subroutine
+                                                                                     ; FCDA Wait for 1 to 127 Falling Edges of the 2.4KHz Clock subroutine
+                                                                                     ; FCEA Send ASCII Character to Screen subroutine
+                                                                                     ; FD0B Handle <ESC> subroutine
+                                                                                     ; FD11 Handle <ACK> or <NAK> subroutine
+                                                                                     ; FD1A Handle <BEL> subroutine
+                                                                                     ; FD29 Print an ASCII Character on the Screen subroutine
+                                                                                     ; FD40 Reset Cursor to Start of Current Line Without Deletion subroutine
+                                                                                     ; FD44 Invert Character at Current Cursor Position subroutine
+                                                                                     ; FD50 Handle <DEL> subroutine
+                                                                                     ; FD5C Handle <BS> subroutine
+                                                                                     ; FD62 Handle <LF> subroutine
+                                                                                     ; FD69 Handle <FF> subroutine
+                                                                                     ; FD7D Handle <RS> subroutine
+                                                                                     ; FD87 Handle <VT> subroutine
+                                                                                     ; FD8D Handle <SO> subroutine
+                                                                                     ; FD92 Handle <SI> subroutine
+                                                                                     ; FD9A Handle <LOCK> subroutine
+                                                                                     ; FDA2 Handle Cursor Keys from Keyboard subroutine
+                                                                                     ; FDAE Handle <COPY> Key subroutine
+                                                                                     ; FDC0 Handle <DEL> key #F (ASCII #7F) subroutine
+                                                                                     ; FDC2 Handle '[\]^_' keys #3B-#3F (ASCII #5B-#5F) subroutine
+                                                                                     ; FDC6 Handle 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' keys #21-#3A (ASCII #41-#5A) sub
+                                                                                     ; FDC8 Handle '@' key #20 (ASCII #40) subroutine
+                                                                                     ; FDD2 Handle '!"#$' keys 1-4 (ASCII #21-#24) subroutine
+                                                                                     ; FDD6 Handle '<=>?>' keys #1C-#1F (ASCII #3C-#3F) subroutine
+                                                                                     ; FDD8 Handle '123456789:;' keys #11-#1B (ASCII #31-#3B) subroutine
+                                                                                     ; FDDF Handle <SPACE> key 0 (ASCII #10) subroutine
+                                                                                     ; FDEC Handle <LF>, Scrolling if Necessary subroutine
+                                                                                     ; FE08 Scroll the Screen subroutine
+                                                                                     ; FE0A Scroll Y lines of the Screen subroutine
+                                                                                     ; FE22 Delete Current Line subroutine
+                                                                                     ; FE2C Add One Line to the Cursor Position subroutine
+                                                                                     ; FE35 Move the Cursor Back One Position subroutine
+                                                                                     ; FE52 Send Character to VIA and Screen subroutine
+                                                                                     ; FE55 Send Character to Screen subroutine
+                                                                                     ; FE66 Wait Until Next CRT Field Flyback subroutine
+                                                                                     ; FE6B Wait Until Next or Current CRT Field Flyback subroutine
+                                                                                     ; FE71 Scan Key Matrix subroutine
+                                                                                     ; FE94 OSRDCH Get Key subroutine
+                                                                                     ; FEC4 Decode Control Character subroutine
+                                                                                     ; FEFB Send Contents of Accumulator to VIA subroutine
+                                                                                     ; FF38 Do <EXT> subroutine
+                                                                                     ; 
+                                                                                     ; 
+                                                                                     ; Other routines...
+                                                                                     ; -----------------
+                                                                                     ; 
+                                                                                     ; F04B Interpreter for #F000 Command Words
+                                                                                     ; F085 Set Array Variable to an Arbitrarily Complex Expression
+                                                                                     ; F0AE Execute the Command 'DIM'
+                                                                                     ; F141 Execute the Command 'RUN'
+                                                                                     ; F14C Execute the Command 'WAIT'
+                                                                                     ; F155 Table of Compressed Assembler Mnemonic (MSB)
+                                                                                     ; F195 Table of Compressed Assembler Mnemonic (LSB)
+                                                                                     ; F1D5 Table of Bit Masks for Address Modes (LSB)
+                                                                                     ; F1E4 Table of Bit Masks for Address Modes (MSB)
+                                                                                     ; F1F3 Table of Offset from Base for Address Modes
+                                                                                     ; F211 Table of Base Address Value for Mnemonics Modes
+                                                                                     ; F251 Table of Base Address Value for Mnemonics
+                                                                                     ; F29C Execute the Command ']'
+                                                                                     ; F2A1 Execute the Command '['
+                                                                                     ; F32E Deal with Assembler Label Definition
+                                                                                     ; F360 Deal with Assembler Comments
+                                                                                     ; F38E Deal with Assembler Statement
+                                                                                     ; F3F2 Get Assembler Addressing Mode Data and Type
+                                                                                     ; F440 Act on Assembler ??? Mode
+                                                                                     ; F454 Act on Assembler Immediate Mode
+                                                                                     ; F462 Act on Assembler Indirect Mode
+                                                                                     ; F49B Construct Assembler Opcode and Data
+                                                                                     ; F4EC Handle Assembler Relative Addressing
+                                                                                     ; F531 Execute the Command 'OLD'
+                                                                                     ; F542 Execute the Command 'DRAW'
+                                                                                     ; F546 Execute the Command 'MOVE'
+                                                                                     ; F54E Execute the Command 'PLOT'
+                                                                                     ; F5B5 Draw a Line Routine
+                                                                                     ; F5EB Plot a Line with (X change) <= (Y change)
+                                                                                     ; F61C Plot a Line with (X change) > (Y change)
+                                                                                     ; F67B Execute the Command 'CLEAR'
+                                                                                     ; F6C2 Perform 'CLEAR 0'
+                                                                                     ; F6CF Graphics Mode Control Data
+                                                                                     ; F6D3 Point Plot Routine LSBs for Graphic Modes 0 to 4
+                                                                                     ; F6D8 Point Plot Routine MSBs for Graphic Modes 0 to 4
+                                                                                     ; F6DD VDG Control Byte for Graphic Modes 0 to 4
+                                                                                     ; F6E2 Mode 0 Point PLot Routine
+                                                                                     ; F7C9 Graphics Bit Mask Table
+                                                                                     ; F8BE COS Interpreter Command Table
+                                                                                     ; F926 Default COS Error Handler
+                                                                                     ; FA20 Execute the Command '*RUN'
+                                                                                     ; FA2A Execute the Command '*CAT'
+                                                                                     ; FA6B Get a Hexadecimal Number and Jump There
+                                                                                     ; FABB Execute the Command '*SAVE'
+                                                                                     ; F926 Default COS Error Handler
+                                                                                     ; FECB WRCHAR Control Code Data Lookup Table
+                                                                                     ; FED6 RDCHAR Control Code Data Lookup Table
+                                                                                     ; FEE3 WRCHAR Control Code Address Lookup Table
+                                                                                     ; FEEE RDCHAR Control Code Address Lookup Table
+                                                                                     ; FF3F RESET Routine
+                                                                                     ; FF9A Vector Data Table
+                                                                                     ; FFB2 IRQ/BRK Handler
+                                                                                     ; FFC0 Execute BRK
+                                                                                     ; FFC7 Execute NMI
+                                                                                     ; FFCB Operating System Jump Table
+                                                                                     ; 
+                                                                                     ; DEFINE #F08B sr_F08B
+                                                                                     ; DEFINE #F08E sr_F08E
+                                                                                     ; DEFINE #F291 sr_F291
+                                                                                     ; DEFINE #F360 sr_F360
+                                                                                     ; DEFINE #F376 sr_F376
+                                                                                     ; DEFINE #F379 sr_F379
+                                                                                     ; DEFINE #F37E sr_F37E
+                                                                                     ; DEFINE #F38E sr_F38E
+                                                                                     ; DEFINE #F644 sr_F644
+                                                                                     ; DEFINE #F655 sr_F655
+                                                                                     ; DEFINE #F678 sr_F678
+                                                                                     ; DEFINE #F7D1 sr_F7D1
+                                                                                     ; DEFINE #F7EC sr_F7EC
+                                                                                     ; DEFINE #F7F1 sr_F7F1
+                                                                                     ; DEFINE #F7FD sr_F7FD
+                                                                                     ; DEFINE #F802 sr_F802
+                                                                                     ; DEFINE #F80B sr_F80B
+                                                                                     ; DEFINE #F818 sr_F818
+                                                                                     ; DEFINE #F84F sr_F84F
+                                                                                     ; DEFINE #F876 sr_F876
+                                                                                     ; DEFINE #F87E sr_F87E
+                                                                                     ; DEFINE #F893 sr_F893
+                                                                                     ; DEFINE #F958 sr_F958
+                                                                                     ; DEFINE #F992 sr_F992
+                                                                                     ; DEFINE #F999 sr_F999
+                                                                                     ; DEFINE #F9A2 sr_F9A2
+                                                                                     ; DEFINE #FA08 sr_FA08
+                                                                                     ; DEFINE #FA65 sr_FA65
+                                                                                     ; DEFINE #FA76 sr_FA76
+                                                                                     ; DEFINE #FB3B sr_FB3B
+                                                                                     ; DEFINE #FB7A sr_FB7A
+                                                                                     ; DEFINE #FB81 sr_FB81
+                                                                                     ; DEFINE #FB8A sr_FB8A
+                                                                                     ; DEFINE #FB8E sr_FB8E
+                                                                                     ; DEFINE #FBC9 sr_FBC9
+                                                                                     ; DEFINE #FBE2 sr_FBE2
+                                                                                     ; DEFINE #FBE4 sr_FBE4
+                                                                                     ; DEFINE #FC23 sr_FC23
+                                                                                     ; DEFINE #FC2B sr_FC2B
+                                                                                     ; DEFINE #FC3E sr_FC3E
+                                                                                     ; DEFINE #FC40 sr_FC40
+                                                                                     ; DEFINE #FCBD sr_FCBD
+                                                                                     ; DEFINE #FCCD sr_FCCD
+                                                                                     ; DEFINE #FCD8 sr_FCD8
+                                                                                     ; DEFINE #FCDA sr_FCDA
+                                                                                     ; DEFINE #FCEA sr_FCEA
+                                                                                     ; DEFINE #FD13 sr_FD13
+                                                                                     ; DEFINE #FD44 sr_FD44
+                                                                                     ; DEFINE #FDEC sr_FDEC
+                                                                                     ; DEFINE #FE35 sr_FE35
+                                                                                     ; DEFINE #FE3A sr_FE3A
+                                                                                     ; DEFINE #FE66 sr_FE66
+                                                                                     ; DEFINE #FE6B sr_FE6B
+                                                                                     ; DEFINE #FE71 sr_FE71
+                                                                                     ; DEFINE #FEC5 sr_FEC5
+                                                                                     ; DEFINE #FEFB sr_FEFB
+                                                                                     ; DEFINE #FFCB sr_FFCB
+                                                                                     ; DEFINE #FFCE sr_FFCE
+                                                                                     ; DEFINE #FFD1 sr_FFD1
+                                                                                     ; DEFINE #FFD4 sr_FFD4
+                                                                                     ; DEFINE #FFD7 sr_FFD7
+                                                                                     ; DEFINE #FFDA sr_FFDA
+                                                                                     ; DEFINE #FFDD sr_FFDD
+                                                                                     ; DEFINE #FFE0 sr_FFE0
+                                                                                     ; DEFINE #FFE3 sr_FFE3
+                                                                                     ; DEFINE #FFE6 sr_FFE6
+                                                                                     ; DEFINE #FFED sr_FFED
+                                                                                     ; DEFINE #FFF4 sr_FFF4
+                                                                                     ; DEFINE #FFF7 sr_FFF7
+                                                                                     ; 
                                                                                      ; 
                                                                                      ; 
                                                                                      ; 
@@ -300,8 +827,10 @@
 49895 03 | C2E7 8D 03 02   | STA #203                                                ; 
                                                                                      ; 
                                                                                      ; SET THE BASIC ERROR HANDLER TO THE
-                                                                                     ; DEFAULT TEXT AT #C9E7
+;;ERR missing data curr: 57082 should be next: 49898
+57082 00 | DEFA                                                                      ; ULT TEXT AT #C9E7
                                                                                      ; 
+;;ERR missing data curr: 49898 should be next: 57082
 49898 02 | C2EA A9 E7      | LDA @#E7                                                ; 
 49900 02 | C2EC 85 10      | STA #10                                                 ; 
 49902 02 | C2EE A9 C9      | LDA @#C9                                                ; 
@@ -535,9 +1064,9 @@
                                                                                      ; - Enter with the variable number (0=@, 1=A, etc TO 26=Z) in the LSB of
                                                                                      ; the workspace stack at level (?4-1).
                                                                                      ; 
-50149 03 | C3E5 20 E1 C4   | JSR #C4E1                                               ; Evaluate a numerical expression onto the                                 w/s stack and do post-test.
-50152 03 | C3E8 20 2F CA   | JSR #CA2F                                               ; Assign value on the w/s stack to a variable                                 number on the w/s stack
-50155 03 | C3EB 4C 5B C5   | JMP #C55B                                               ; Return to execute the next command whether                                 by program execution or in direct mode
+50149 03 | C3E5 20 E1 C4   | JSR #C4E1                                               ; Evaluate a numerical expression onto the   w/s stack and do post-test.
+50152 03 | C3E8 20 2F CA   | JSR #CA2F                                               ; Assign value on the w/s stack to a variable  number on the w/s stack
+50155 03 | C3EB 4C 5B C5   | JMP #C55B                                               ; Return to execute the next command whether   by program execution or in direct mode
                                                                                      ; 
                                                                                      ; 
                                                                                      ; Execute the command '!'
@@ -545,8 +1074,8 @@
                                                                                      ; 
                                                                                      ; - Sets pre-interpreted vector to an arbitrarily complex expression.
                                                                                      ; 
-50158 03 | C3EE 20 BC C8   | JSR #C8BC                                               ; Evaluate an arbitrarily complex numeric                                 expression pointed to by (5),Y                                 which is the ! base address
-50161 03 | C3F1 20 93 CE   | JSR #CE93                                               ; Interpret an '=' sign and a numerical                                 expression following, and copy the LSB                                 to the base address on stack
+50158 03 | C3EE 20 BC C8   | JSR #C8BC                                               ; Evaluate an arbitrarily complex numeric expression pointed to by (5),Y which is the ! base address
+50161 03 | C3F1 20 93 CE   | JSR #CE93                                               ; Interpret an '=' sign and a numerical expression following, and copy the LSB to the base address on stack
 50164 02 | C3F4 B5 26      | LDA #26,X                                               ; Get the second LSB from stack
 50166 01 | C3F6 C8         | INY                                                     ; Point to the second address
 50167 02 | C3F7 91 52      | STA (#52),Y                                             ; ..and dump the second LSB
@@ -1648,7 +2177,7 @@
 51211 03 | C80B 20 BC C8   | JSR #C8BC                                               ; 
 51214 02 | C80E A2 05      | LDX @#5                                                 ; 
 51216 03 | C810 4C 7B C2   | JMP #C27B                                               ; 
-                                                                                     ; ÿ
+                                                                                     ; 
                                                                                      ; 
                                                                                      ; <factor> * <factor>
                                                                                      ; -------------------
@@ -3742,7 +4271,7 @@
                                                                                      ; 
 54190 03 | D3AE 20 EB D9   | JSR #D9EB                                               ; 
 54193 03 | D3B1 4C D5 CC   | JMP #CCD5                                               ; 
-                                                                                     ; ÿ
+                                                                                     ; 
                                                                                      ; 
                                                                                      ; Execute the Command 'FPUT'
                                                                                      ; --------------------------
@@ -4459,7 +4988,7 @@
 55331 02 | D823 85 62      | STA #62                                                 ; 
 55333 01 | D825 8A         | TXA                                                     ; 
 55334 01 | D826 60         | RTS                                                     ; 
-                                                                                     ; ÿ
+                                                                                     ; 
                                                                                      ; 
                                                                                      ; ??? subroutine
                                                                                      ; --------------
@@ -5192,7 +5721,7 @@
 56603 03 | DD1B 20 27 DC   | JSR #DC27                                               ; 
 56606 03 | DD1E 20 A6 DB   | JSR #DBA6                                               ; 
 56609 03 | DD21 4C 45 DA   | JMP #DA45                                               ; 
-                                                                                     ; ÿ
+                                                                                     ; 
                                                                                      ; 
                                                                                      ; ???
                                                                                      ; ---
@@ -6314,7 +6843,7 @@
 62344 01 | F388 68         | PLA                                                     ; Restore number
 62345 02 | F389 29 0F      | AND @#F                                                 ; Clear upper nibble
 62347 03 | F38B 4C F9 C5   | JMP #C5F9                                               ; Convert to hex and print
-                                                                                     ; ÿ
+                                                                                     ; 
                                                                                      ; 
                                                                                      ; Deal with Assembler Statement
                                                                                      ; -----------------------------
@@ -6588,7 +7117,7 @@
 62788 02 | F544 D0 02      | BNE #F548                                               ; ..so dump the PLOT number to the w/s
                                                                                      ; stack , interpret the (X,Y) coordinates
                                                                                      ; and execute as per the PLOT routine
-                                                                                     ; ÿ
+                                                                                     ; 
                                                                                      ; 
                                                                                      ; Execute the Command 'MOVE'
                                                                                      ; --------------------------
@@ -7034,7 +7563,7 @@
                                                                                      ; bytes/row, calculate byte address, get bit
                                                                                      ; mask and clear/set/invert as appropriate
 63315 01 | F753 60         | RTS                                                     ; 
-                                                                                     ; ÿ
+                                                                                     ; 
                                                                                      ; 
                                                                                      ; Mode 2 Point Plot subroutine
                                                                                      ; ----------------------------
@@ -7411,7 +7940,7 @@
 63675 02 | F8BB B5 02      | LDA #2,X                                                ; This will be zero if failed to decode
                                                                                      ; the first hex digit successfully
 63677 01 | F8BD 60         | RTS                                                     ; 
-                                                                                     ; ÿ
+                                                                                     ; 
                                                                                      ; 
                                                                                      ; COS Interpreter Command Table
                                                                                      ; -----------------------------
@@ -7474,11 +8003,13 @@
 63779 03 | F923 6C C9 00   | JMP (#C9)                                               ; Jump to execute the COS command
                                                                                      ; 
                                                                                      ; 
-                                                                                     ; Default COS Error Handler
+;;ERR missing data curr: 57082 should be next: 63782
+57082 00 | Defa                                                                      ; ult COS Error Handler
                                                                                      ; -------------------------
                                                                                      ; 
                                                                                      ; - Sends the string 'COM?' to OSWRCH and then executes BRK.
                                                                                      ; 
+;;ERR missing data curr: 63782 should be next: 57082
 63782 03 | F926 20 D1 F7   | JSR #F7D1                                               ; Send the following string to WRCHAR
                                                                                      ; 
 63785 04 | F929 43 4F 4D 3F                                                          ; COM?
@@ -7815,7 +8346,7 @@
                                                                                      ; 
 64005 02 | FA05 26 DB      | ROL #DB                                                 ; Clear carry if last block flag clear
 64007 01 | FA07 60         | RTS                                                     ; 
-                                                                                     ; ÿ
+                                                                                     ; 
                                                                                      ; 
                                                                                      ; 
                                                                                      ; 
@@ -8184,7 +8715,7 @@
                                                                                      ; since this block will not be first block
 64313 01 | FB39 28         | PLP                                                     ; ..yes, restore interrupt status
 64314 01 | FB3A 60         | RTS                                                     ; ..and return
-                                                                                     ; ÿ
+                                                                                     ; 
                                                                                      ; 
                                                                                      ; 
                                                                                      ; 
@@ -9180,7 +9711,7 @@
 65212 02 | FEBC A9 FD      | LDA @#FD                                                ; Get MSB execution address
 65214 02 | FEBE 85 E3      | STA #E3                                                 ; ..into w/s
 65216 01 | FEC0 98         | TYA                                                     ; Acc = ASCII value of key - #20
-65217 03 | FEC1 6C E2 00   | JMP (#E2)                                               ; Jump to deal with char or control code ÿ
+65217 03 | FEC1 6C E2 00   | JMP (#E2)                                               ; Jump to deal with char or control code
                                                                                      ; 
                                                                                      ; Decode Control Character subroutine
                                                                                      ; -----------------------------------

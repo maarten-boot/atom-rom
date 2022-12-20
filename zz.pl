@@ -4,8 +4,19 @@ sub ltrim { my $s = shift; $s =~ s/^\s+//;       return $s };
 sub rtrim { my $s = shift; $s =~ s/\s+$//;       return $s };
 sub  trim { my $s = shift; $s =~ s/^\s+|\s+$//g; return $s };
 
-my @LINES;
-my %ADDR;
+my @LINES; # store all lines by actual line nr
+my %ADDR; # store the code offset and link to the line nr
+my %DEFS; # store the defines
+
+sub validate_curr_next($$) {
+    my $curr = shift;
+    my $next = shift;
+    if ($next) { # if we have next defined, we should now actually be at next, if not complain as we have missing data in the file
+        if( $next != $curr) {
+            print ";;ERR missing data curr: $curr should be next: $next\n";
+        }
+    }
+}
 
 # main
 {
@@ -16,17 +27,23 @@ my %ADDR;
     my $nr = 0;
     my $curr = 0; # the current address as converted from hex
     my $next = 0; # the next address as converted from hex base + the number of bytes
-# ÿ
+
     while(<IN>) {
-        if ( m/$p1/x) {
+        # cleanup the current line
+        $_ = trim($_);
+        $_ =~ s/ÿ//;
+
+        if( m/^DEFINE\s+(\#\w+)\s+(\w+)/ ) {
+            $DEFS{$1} = $2;
+        }
+
+        if ( m/$p1/x ) { # a line with a sam statement
             my $base = trim($1);
+            $ADDR{$base} = $nr;
+
             my $hex_val = hex($base);
             $curr = $hex_val;
-            if ($next) { # if we have next defined, we should now actually be at next, if not complain as we have missing data in the file
-                if( $next != $curr) {
-                    print ";;ERR missing data curr: $curr should be next: $next\n";
-                }
-            }
+            validate_curr_next($curr, $next);
 
             my $code = trim($2);
             my @b = split(/\s+/, $code);
@@ -53,15 +70,13 @@ my %ADDR;
             next;
         }
 
-        if ( m/^([[:xdigit:]]{4})((?:\s+[[:xdigit:]]{2})*)(.*)/x) {
+        if ( m/^([[:xdigit:]]{4})((?:\s+[[:xdigit:]]{2})*)(.*)/x) { # a line with a data define
             my $base = trim($1);
+            $ADDR{$base} = $nr;
+
             my $hex_val = hex($base);
             $curr = $hex_val;
-            if ($next) { # if we have next defined, we should now actually be at next, if not complain as we have missing data in the file
-                if( $next != $curr) {
-                    print ";;ERR missing data curr: $curr should be next: $next\n";
-                }
-            }
+            validate_curr_next($curr, $next);
 
             my $bytes = trim($2);
             my @b = split(/\s+/, $bytes);
@@ -85,6 +100,7 @@ my %ADDR;
             next;
         }
 
+        # a line that is most likely just a comment (but it may be a continuation comment)
         my $line = trim($_);
         $line =~ s/^;+//;
         $line = trim($line);
