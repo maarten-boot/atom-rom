@@ -18,6 +18,14 @@ sub validate_curr_next($$) {
     }
 }
 
+sub analAsm($) {
+    my $inst = shift;
+
+    my @ins = split(/\s+/, $inst);
+    print  STDERR $ins[0], "\n";
+    return $inst;
+}
+
 # main
 {
     open(IN,"<combined.txt") || die "Fatal: cannot open in file, $!";
@@ -38,28 +46,31 @@ sub validate_curr_next($$) {
         }
 
         if ( m/$p1/x ) { # a line with a sam statement
-            my $base = trim($1);
+            my $base = trim($1); # the base address after compiling the asm statement
             $ADDR{$base} = $nr;
 
             my $hex_val = hex($base);
             $curr = $hex_val;
             validate_curr_next($curr, $next);
 
-            my $code = trim($2);
+            my $code = trim($2); # the compiled code bytes
+            my $inst = trim($3); # the asm instruction
+            $inst = analAsm($inst);
+            my $rest = trim($4);
+
+            # calculate the next base address for the next instruction
             my @b = split(/\s+/, $code);
             my $nbytes = @b;
             $next = $curr + $nbytes;
 
+            # prepare for printing
             while(length($code) < 10 ) {
                 $code = "$code "
             }
-
-            my $inst = trim($3);
             while(length($inst) < 55 ) {
                 $inst = "$inst "
             }
 
-            my $rest = trim($4);
             my $p = sprintf("%05d %02d", $hex_val, $nbytes);
             my $z = "$p | $base $code | $inst ; $rest";
 
@@ -71,14 +82,14 @@ sub validate_curr_next($$) {
         }
 
         if ( m/^([[:xdigit:]]{4})((?:\s+[[:xdigit:]]{2})*)(.*)/x) { # a line with a data define
-            my $base = trim($1);
+            my $base = trim($1); # the base address after compiling the asm statement
             $ADDR{$base} = $nr;
 
             my $hex_val = hex($base);
             $curr = $hex_val;
             validate_curr_next($curr, $next);
 
-            my $bytes = trim($2);
+            my $bytes = trim($2); # the data bytes
             my @b = split(/\s+/, $bytes);
             my $nbytes = @b;
             $next = $curr + $nbytes;
