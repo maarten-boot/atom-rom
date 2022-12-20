@@ -1,5 +1,7 @@
 #! /usr/bin/perl -w
 
+use strict;
+
 sub ltrim { my $s = shift; $s =~ s/^\s+//;       return $s };
 sub rtrim { my $s = shift; $s =~ s/\s+$//;       return $s };
 sub  trim { my $s = shift; $s =~ s/^\s+|\s+$//g; return $s };
@@ -22,7 +24,26 @@ sub analAsm($) {
     my $inst = shift;
 
     my @ins = split(/\s+/, $inst);
-    print  STDERR $ins[0], "\n";
+
+    if( $#ins == 0 ) {
+        print  STDERR $ins[0], "\n";
+        return $inst;
+    }
+
+    # do we have a @, ( , ,X ,Y
+    my $imm = 0;
+    my $ind = 0;
+    my $x = 0;
+    my $y = 0;
+
+    my @q = split(/\,/,$ins[1]);
+    if( $#q > 0 ) {
+        if( $q[1] eq "Y") { $y = 1; }
+        if( $q[1] eq "X") { $x = 1; }
+    }
+
+    print  STDERR $ins[0]," ", $ins[1], "\n";
+
     return $inst;
 }
 
@@ -116,7 +137,7 @@ sub analAsm($) {
         $line =~ s/^;+//;
         $line = trim($line);
 
-        $p = ' ' x 85;
+        my $p = ' ' x 85;
         my $z = "$p; $line";
         $LINES[$nr] = $z;
         print "$z\n";
